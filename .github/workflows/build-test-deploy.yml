@@ -14,7 +14,7 @@ jobs:
       - run: npm run build
   test:
     needs: build
-    runs-on: ububtu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: checkout repo
         uses: actions/checkout@3
