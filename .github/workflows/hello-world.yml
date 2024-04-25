@@ -1,9 +1,17 @@
 name: hello-world
 on: push
 jobs: 
+
   hello-world-job:
     runs-on: ubuntu-latest
     steps: 
       - name: Check out repository code
         uses: actions/checkout@v3
       - run: echo "$(cat hello_world.txt)"
+      
+  my-job:
+    # Importing a reusable workflow from another repository and branch
+    uses: organization/repo/.github/workflows/build-test-deploy.yml@main
+    # Passing 'node-version' as an input parameter to the reusable workflow
+    with:
+      node-version: '18.x'
