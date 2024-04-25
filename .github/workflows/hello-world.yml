@@ -10,8 +10,9 @@ jobs:
       - run: echo "$(cat hello_world.txt)"
       
   my-job:
+  
     # Importing a reusable workflow from another repository and branch
-    uses: organization/repo/.github/workflows/build-test-deploy.yml@main
+    uses: weijunjiang123/actions-learning/.github/workflows/build-test-deploy.yml@main
     # Passing 'node-version' as an input parameter to the reusable workflow
     with:
       node-version: '18.x'
